@@ -3,5 +3,19 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+    <display-name>User Registration Web Application</display-name>
+
+    <!-- RegisterServlet configuration -->
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.user.servlet.RegisterServlet</servlet-class>
+    </servlet>
+
+    <!-- Mapping the RegisterServlet to /register URL pattern -->
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+
+    <!-- Other configurations can go here (optional) -->
 </web-app>

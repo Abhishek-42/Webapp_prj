@@ -18,6 +18,7 @@
 
             <button href="#" type="submit">Login</button>
         </form>
+        <p>Not registered yet? <a href="register.jsp">Click here</a> </p>
     </div>
 </body>
 </html>

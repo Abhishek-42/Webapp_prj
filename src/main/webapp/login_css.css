@@ -62,3 +62,19 @@ body {
 .login-container button:hover {
     background-color: #3700b3;
 }
+
+/* Style for the 'Not registered yet?' link */
+.login-container p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #b0b0b0;
+}
+
+.login-container a {
+    color: #6200ea;
+    text-decoration: none;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
