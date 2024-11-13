@@ -57,6 +57,7 @@ Once the server is running, access the application in a web browser at:
 
 Register in the website , such as:
 
-    first go into login page then click on (not registered yet ) and go in registeration page .
-    then type your detailes and register to the website 
-    Data management processes (CRUD operations)
+    First go into login page then click on (not registered yet ) and go in registeration page .
+    ![Project Screenshot](https://ibb.co/0h3Zg56)
+    Then type your detailes and register to the website 
+    Then the registration details will be stored in database . which you can see in workbench or cmd.
