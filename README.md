@@ -1,62 +1,82 @@
-# Fitness Website
+# Maven-Based Web Application
 
-Maven-based Web Application
-Project Setup
-###Cloning the Repository
+A dynamic web application built using **Java**, **JSP**, **MySQL**, and hosted on **Apache Tomcat**. This project demonstrates a modular approach to web development using the **Maven build tool** for dependency management and project structuring.
 
-To start with the project, clone this repository to your local machine:
+---
 
-git clone (https://github.com/Abhishek-42/Webapp_prj)
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Project Structure](#project-structure)
+- [Setup Instructions](#setup-instructions)
+- [Database Schema](#database-schema)
+
+---
+
+## Overview
+This web application serves as a template for projects that involve dynamic content generation, database integration, and modular code structure. It includes:
+- **DAO pattern** for database access.
+- User-friendly **JSP** pages for front-end design.
+- **REST-like architecture** for back-end operations.
+
+---
+
+## Features
+- **Dynamic Content Management:** CRUD operations supported.
+- **MySQL Database Integration:** Seamless data storage and retrieval.
+- **Responsive UI:** JSP-based views for interactive user experience.
+- **Modular Codebase:** DAO classes for easy maintainability.
+- **Lightweight Hosting:** Runs efficiently on a local Tomcat server.
+
+---
+
+## Technologies Used
+- **Programming Language:** Java
+- **Front-End:** JSP, HTML, CSS
+- **Database:** MySQL
+- **Server:** Apache Tomcat
+- **Build Tool:** Maven
+- **IDE:** Eclipse (or VS Code with appropriate extensions)
+
+---
 
 ## Project Structure
+```markdown
+```
+maven-web-app/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   ├── com.User.dao/       # Data Access Object classes
+│   │   │   ├── com.User.model/     # POJO classes
+│   │   │   ├── com.User.servlets/  # Servlet files
+│   │   ├── resources/                 # Configuration files
+│   │   ├── webapp/
+│   │       ├── WEB-INF/               # Deployment descriptor
+│   │       ├── views/                 # JSP files
+│   ├── test/                          # Test cases
+├── pom.xml                            # Maven build configuration
+```
+```
 
-    src/main/java: Java source code, including the DAO classes for database operations.
-    src/main/webapp: JSP files and static resources like CSS/JS.
-    src/main/resources: Configuration files, including database settings.
-    pom.xml: Maven configuration file with dependencies.
+## Database Schema
+### Table: `users`
+| Column       | Type        | Description           |
+|--------------|-------------|-----------------------|
+| `id`         | INT (PK)    | Unique user ID        |
+| `username`   | VARCHAR(50) | User's username       |
+| `password`   | VARCHAR(100)| Encrypted password    |
+| `email`      | VARCHAR(100)| User's email address  |
 
-### Database Setup
 
-    Create a new MySQL database.
-    Run the provided SQL scripts (if available) to set up the tables and schema.
-    Update the database credentials in the configuration files as needed.
+> The complete schema is located in the `sql/` folder.
 
-## Project Requirements
-### Prerequisites
+### Code of table
 
-    Java Development Kit (JDK): Version 8 or higher
-    Maven: Version 3.x
-    MySQL Server: For database management
-    Apache Tomcat: Version 9 or compatible for local deployment
-    IDE (e.g., Eclipse or IntelliJ): Optional but recommended
-
-### Dependencies
-
-All dependencies are managed by Maven. When you build the project, Maven will automatically download the necessary libraries, specified in pom.xml.
-How to Run the Project
-
-    Build the Project
-    Open the terminal in the project’s root directory and use:
-
-mvn clean install
-
-### Configure Database
-Ensure the MySQL database is running, and the necessary tables are created. Verify the database credentials are correctly set in the application configuration.
-
-Deploy on Tomcat
-
-    Deploy the project to a local Tomcat server from your IDE or manually copy the .war file to the Tomcat webapps directory.
-    Start the Tomcat server.
-
-Access the Application
-Once the server is running, access the application in a web browser at:
-
-  `http://localhost:8080/sitepkg/`
-
-## Usage
-
-Register in the website , such as:
-
-    First go into login page then click on (not registered yet ) and go in registeration page .
-    Then type your detailes and register to the website 
-    Then the registration details will be stored in database . which you can see in workbench or cmd.
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE
+);
